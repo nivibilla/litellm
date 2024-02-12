@@ -29,6 +29,7 @@ from litellm.utils import ModelResponse, CustomStreamWrapper
 import copy
 from litellm._logging import verbose_router_logger
 import logging
+import os
 
 
 class Router:
@@ -1492,6 +1493,7 @@ class Router:
                                 max_connections=1000, max_keepalive_connections=100
                             ),
                             mounts=async_proxy_mounts,
+                            verify=os.environ['LITELLM_CA_CERT_PATH']
                         ),  # type: ignore
                     )
                     self.cache.set_cache(
@@ -1514,6 +1516,7 @@ class Router:
                                 max_connections=1000, max_keepalive_connections=100
                             ),
                             mounts=sync_proxy_mounts,
+                            verify=os.environ['LITELLM_CA_CERT_PATH']
                         ),  # type: ignore
                     )
                     self.cache.set_cache(
@@ -1536,6 +1539,7 @@ class Router:
                                 max_connections=1000, max_keepalive_connections=100
                             ),
                             mounts=async_proxy_mounts,
+                            verify=os.environ['LITELLM_CA_CERT_PATH']
                         ),  # type: ignore
                     )
                     self.cache.set_cache(
@@ -1558,6 +1562,7 @@ class Router:
                                 max_connections=1000, max_keepalive_connections=100
                             ),
                             mounts=sync_proxy_mounts,
+                            verify=os.environ['LITELLM_CA_CERT_PATH']
                         ),  # type: ignore
                     )
                     self.cache.set_cache(
@@ -1594,6 +1599,7 @@ class Router:
                                 max_connections=1000, max_keepalive_connections=100
                             ),
                             mounts=async_proxy_mounts,
+                            verify=os.environ['LITELLM_CA_CERT_PATH']
                         ),  # type: ignore
                     )
                     self.cache.set_cache(
@@ -1614,6 +1620,7 @@ class Router:
                                 max_connections=1000, max_keepalive_connections=100
                             ),
                             mounts=sync_proxy_mounts,
+                            verify=os.environ['LITELLM_CA_CERT_PATH']
                         ),  # type: ignore
                     )
                     self.cache.set_cache(
@@ -1635,6 +1642,7 @@ class Router:
                                 max_connections=1000, max_keepalive_connections=100
                             ),
                             mounts=async_proxy_mounts,
+                            verify=os.environ['LITELLM_CA_CERT_PATH']
                         ),
                     )
                     self.cache.set_cache(
@@ -1655,6 +1663,7 @@ class Router:
                                 max_connections=1000, max_keepalive_connections=100
                             ),
                             mounts=sync_proxy_mounts,
+                            verify=os.environ['LITELLM_CA_CERT_PATH']
                         ),
                     )
                     self.cache.set_cache(
@@ -1681,6 +1690,7 @@ class Router:
                             max_connections=1000, max_keepalive_connections=100
                         ),
                         mounts=async_proxy_mounts,
+                        verify=os.environ['LITELLM_CA_CERT_PATH']
                     ),  # type: ignore
                 )
                 self.cache.set_cache(
@@ -1703,6 +1713,7 @@ class Router:
                             max_connections=1000, max_keepalive_connections=100
                         ),
                         mounts=sync_proxy_mounts,
+                        verify=os.environ['LITELLM_CA_CERT_PATH']
                     ),  # type: ignore
                 )
                 self.cache.set_cache(
@@ -1726,6 +1737,7 @@ class Router:
                             max_connections=1000, max_keepalive_connections=100
                         ),
                         mounts=async_proxy_mounts,
+                        verify=os.environ['LITELLM_CA_CERT_PATH']
                     ),  # type: ignore
                 )
                 self.cache.set_cache(
@@ -1749,6 +1761,7 @@ class Router:
                             max_connections=1000, max_keepalive_connections=100
                         ),
                         mounts=sync_proxy_mounts,
+                        verify=os.environ['LITELLM_CA_CERT_PATH']
                     ),  # type: ignore
                 )
                 self.cache.set_cache(
